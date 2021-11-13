@@ -1,5 +1,6 @@
 // routes/api/accounts.js
 import express from 'express';
+import UserType from 'types/User';
 import User from '../../models/User';
 import validate from '../../validation/create-account-validation';
 const router = express.Router();
@@ -19,10 +20,12 @@ router.post('/', (req, res) => {
                 return res.status(200).json({ failed: "username_taken" });
             }
             else {
-                const newUser = {
+                const newUser: UserType = {
                     username: req.body.username,
+                    hash: 'hash',
+                    salt: 'salt',
                     age: req.body.age,
-                    joined_date: Date.now(),
+                    joined_date: new Date(),
                 }
                 User.create(newUser)
                     .then(user => res.json({ success: 'User added successfully' }))

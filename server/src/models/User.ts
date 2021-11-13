@@ -20,7 +20,7 @@ const UserSchema = new mongoose.Schema({
     },
     joined_date: {
         type: Date,
-        deault: Date.now
+        default: Date.now()
     }
 });
 
