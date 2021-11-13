@@ -1,5 +1,5 @@
 const keys = {
-    mongoUrl: `mongodb+srv://server1:rrXxWRRowUsAjSNl@cluster0.tn1fb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+    mongoUrl: "" + process.env.MONGO_URL,
     secretOrKey: process.env.SECRET,
 };
 

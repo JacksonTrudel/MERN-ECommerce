@@ -2,6 +2,8 @@
 
 export default interface User {
     username: string;
-    age: number | null;
-    joined_date: Date | null;
+    hash: string,
+    salt: string,
+    age: number;
+    joined_date: Date;
 };

@@ -8,10 +8,10 @@ const router = express.Router();
 
 router.post('/', (req, res) => {
     // validate input
-    /*const validationResult = validate(req.body);
+    const validationResult = validate(req.body);
     if (!validationResult.isValid) {
         return res.status(400).json({ errors: validationResult.errors});
-    } FOR LATER */ 
+    }
 
     User.findOne({ username: req.body.username })
         .then(user => {
@@ -101,7 +101,7 @@ router.get('/', (req, res) => {
 });
 
 
-/* THIS ROUTE WILL DELETE ALL ACCOUNTS
+// THIS ROUTE WILL DELETE ALL ACCOUNTS
 
 router.delete('/delete-all-someone-do-it', (req, res) => {
     User.deleteMany({}, () => console.log("done deleting!"))
@@ -110,6 +110,6 @@ router.delete('/delete-all-someone-do-it', (req, res) => {
 
 });
 
-*/
+
 
 export default router;
