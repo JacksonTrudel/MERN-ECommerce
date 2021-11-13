@@ -1,12 +1,12 @@
 import './App.css';
-import UserComponent from './components/UserComponent';
+import Homepage from './containers/Homepage';
 
 function App() {
-  return (
-    <div className="App">
-      <UserComponent user={{name: "Jackson", age: 21}}/>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Homepage />
+        </div>
+    );
 }
 
 export default App;
