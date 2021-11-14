@@ -49,6 +49,13 @@ const styles = {
         padding: '1vmin',
         borderLeft: `1px solid ${colors.lightAccent}`,
     },
+    pageNavSelectedItem: {
+        display: 'flex',
+        justifyContent: 'center',
+        padding: '1vmin',
+        borderLeft: `1px solid ${colors.lightAccent}`,
+        backgroundColor: colors.darkAccent,
+    },
 };
 
 export default styles;

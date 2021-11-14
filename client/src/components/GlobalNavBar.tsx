@@ -1,3 +1,12 @@
+/*
+    To add a new entry to the nav bar, complete the following steps:
+        (Step 1:) Add to NavBarSelection enum
+        (Step 2:) Add mapping to URL path
+        (Step 3:) Add JSX for entry
+
+    The appropriate locations for each step are commented.
+*/
+
 import styles from '../styles/GlobalNavBar';
 import { incrementCounter } from '../redux/actions/CounterActions';
 import { useAppDispatch } from '../redux/hooks';
@@ -8,21 +17,33 @@ import { Navigate } from 'react-router-dom';
 enum NavBarSelection {
     HOMEPAGE,
     UPLOAD_ITEM,
+    // (Step 1:) Add to NavBarSelection enum
     NONE,
 }
 
 const navSelectionToPath = new Map<NavBarSelection, string>([
     [NavBarSelection.HOMEPAGE, '/'],
     [NavBarSelection.UPLOAD_ITEM, '/upload-item'],
+    // (Step 2:) Add mapping to URL path
 ]);
+
+function getCurrentPage(pathname: string): NavBarSelection {
+    let currentPage = NavBarSelection.NONE;
+    navSelectionToPath.forEach((value: string, key: NavBarSelection) => {
+        if (pathname.indexOf(value) >= 0) currentPage = key;
+    });
+    return currentPage;
+}
 
 function GlobalNavBar() {
     const dispatch = useAppDispatch();
+    const [currentPage, setCurrentPage] = useState(getCurrentPage(window.location.pathname));
     const [navBarActiveSelection, setNavBarActiveSelection] = useState<NavBarSelection>(NavBarSelection.NONE);
 
     useEffect(() => {
+        setCurrentPage(getCurrentPage(window.location.pathname));
         setNavBarActiveSelection(NavBarSelection.NONE);
-    }, [navBarActiveSelection]);
+    }, [navBarActiveSelection, currentPage]);
 
     return (
         <div style={styles.headerContainer}>
@@ -39,19 +60,30 @@ function GlobalNavBar() {
             </div>
             <div style={styles.headerPageNav}>
                 <div style={{ ...styles.pageNavContainer, margin: '0 auto 0 7%' }}>
-                    <div style={styles.pageNavItem} onClick={() => setNavBarActiveSelection(NavBarSelection.HOMEPAGE)}>
+                    <div
+                        style={
+                            currentPage === NavBarSelection.HOMEPAGE ? styles.pageNavSelectedItem : styles.pageNavItem
+                        }
+                        onClick={() => setNavBarActiveSelection(NavBarSelection.HOMEPAGE)}
+                    >
                         Homepage
                     </div>
                     <div
-                        style={{ ...styles.pageNavItem, borderRight: `1px solid ${colors.lightAccent}` }}
+                        style={{
+                            ...(currentPage === NavBarSelection.UPLOAD_ITEM
+                                ? styles.pageNavSelectedItem
+                                : styles.pageNavItem),
+                            borderRight: `1px solid ${colors.lightAccent}`,
+                        }}
                         onClick={() => setNavBarActiveSelection(NavBarSelection.UPLOAD_ITEM)}
                     >
                         Upload Item
                     </div>
+                    {/*     (Step 3:) Add JSX for entry   */}
                 </div>
             </div>
             {
-                // redirects
+                // redirect
                 navBarActiveSelection !== NavBarSelection.NONE ? (
                     <Navigate to={navSelectionToPath.get(navBarActiveSelection) ?? '/error'} />
                 ) : null
