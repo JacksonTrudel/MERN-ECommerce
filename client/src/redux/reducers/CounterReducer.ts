@@ -9,18 +9,15 @@ const initialState: CounterState = {
 };
 
 const CounterReducer = (state = initialState, action: CounterAction): CounterState => {
-    console.log(`state: ${JSON.stringify(state)} action: ` + JSON.stringify(action));
     switch (action.type) {
         case GET_COUNTER:
-            return {
-                ...state,
-            };
+            return state;
         case INCREMENT_COUNTER:
             return {
                 value: state.value + action.payload.incrementAmount,
             };
         default:
-            return { ...state };
+            return state;
     }
 };
 

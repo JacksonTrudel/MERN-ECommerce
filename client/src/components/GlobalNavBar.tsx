@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from '../redux/hooks';
 
 function GlobalNavBar() {
     const dispatch = useAppDispatch();
-    const counterValue = useAppSelector((state) => state.counter.value);
+    const counterValue = useAppSelector((state: any) => state.counter.value);
 
     return (
         <div style={styles.container}>
