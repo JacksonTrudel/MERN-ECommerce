@@ -1,11 +1,10 @@
 import styles from '../styles/GlobalNavBar';
-import { useDispatch, useSelector } from 'react-redux';
 import { incrementCounter } from '../redux/actions/CounterActions';
-import { RootState } from '../redux/RootReducer';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
 
 function GlobalNavBar() {
-    const dispatch = useDispatch();
-    const counterValue = useSelector((state: RootState) => state.counter.value);
+    const dispatch = useAppDispatch();
+    const counterValue = useAppSelector((state) => state.counter.value);
 
     return (
         <div style={styles.container}>

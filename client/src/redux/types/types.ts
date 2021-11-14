@@ -3,3 +3,16 @@ export const SET_LOGIN = 'SET_LOGIN';
 
 export const GET_COUNTER = 'GET_COUNTER';
 export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
+
+interface GetCounterAction {
+    type: 'GET_COUNTER';
+}
+
+interface IncrementCounterAction {
+    type: 'INCREMENT_COUNTER';
+    payload: {
+        incrementAmount: number;
+    };
+}
+
+export type CounterAction = GetCounterAction | IncrementCounterAction;

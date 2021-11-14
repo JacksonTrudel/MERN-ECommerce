@@ -1,5 +1,4 @@
-import { GET_COUNTER, INCREMENT_COUNTER } from '../types/types';
-import { AnyAction } from 'redux';
+import { CounterAction, GET_COUNTER, INCREMENT_COUNTER } from '../types/types';
 
 export interface CounterState {
     value: number;
@@ -9,7 +8,7 @@ const initialState: CounterState = {
     value: 0,
 };
 
-const CounterReducer = (state = initialState, action: AnyAction): CounterState => {
+const CounterReducer = (state = initialState, action: CounterAction): CounterState => {
     console.log(`state: ${JSON.stringify(state)} action: ` + JSON.stringify(action));
     switch (action.type) {
         case GET_COUNTER:
@@ -18,7 +17,7 @@ const CounterReducer = (state = initialState, action: AnyAction): CounterState =
             };
         case INCREMENT_COUNTER:
             return {
-                value: state.value + action.incrementAmount,
+                value: state.value + action.payload.incrementAmount,
             };
         default:
             return { ...state };

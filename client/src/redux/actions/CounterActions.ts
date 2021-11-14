@@ -7,6 +7,6 @@ export const getCounter = () => {
 export const incrementCounter = (incrementAmount: number) => {
     return {
         type: INCREMENT_COUNTER,
-        incrementAmount,
+        payload: { incrementAmount },
     };
 };
