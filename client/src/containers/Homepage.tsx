@@ -1,7 +1,7 @@
-import homepageStyles from '../styles/Homepage';
+import commonStyles from '../styles/Common';
 
 function Homepage() {
-    return <div style={homepageStyles.page}>{'TODO'}</div>;
+    return <div style={commonStyles.fullsizeContainerLight}>{'TODO'}</div>;
 }
 
 export default Homepage;

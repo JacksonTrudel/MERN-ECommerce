@@ -1,13 +1,32 @@
 import colors from './Colors';
 
 const styles = {
-    container: {
+    headerContainer: {
+        display: 'flex',
+        flexDirection: 'column' as 'column',
+        width: '100%',
+        borderBottom: `3px solid ${colors.darkAccent}`,
+        color: colors.mainText,
+    },
+    headerTopRow: {
         display: 'flex',
         flexDirection: 'row' as 'row',
+        marginLeft: 'auto',
+        backgroundColor: colors.headerBackground,
         width: '100%',
-        backgroundColor: colors.mainNavBarBackground,
-        borderTop: '10px solid #ffffff',
-        color: '#FFFFFF',
+    },
+    headerPageNav: {
+        backgroundColor: colors.pageNavBackground,
+        width: '100%',
+        color: colors.mainBackground,
+    },
+    footer: {
+        display: 'flex',
+        width: '100%',
+        paddingTop: '10px',
+        backgroundColor: colors.pageNavBackground,
+        borderTop: `3px solid ${colors.darkAccent}`,
+        color: colors.mainBackground,
     },
     accountActionsContainer: {
         display: 'flex',
@@ -18,6 +37,16 @@ const styles = {
         display: 'flex',
         justifyContent: 'center',
         padding: '1vmin',
+    },
+    pageNavContainer: {
+        display: 'flex',
+        flexDirection: 'row' as 'row',
+    },
+    pageNavItem: {
+        display: 'flex',
+        justifyContent: 'center',
+        padding: '1vmin',
+        borderLeft: `1px solid ${colors.lightAccent}`,
     },
 };
 
