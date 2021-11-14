@@ -10,7 +10,10 @@ function GlobalNavBar() {
         <div style={styles.container}>
             <div style={{ ...styles.accountActionsContainer, marginLeft: 'auto' }}>
                 <div style={styles.accountActionItem}>{counterValue}</div>
-                <div style={styles.accountActionItem} onClick={() => dispatch(incrementCounter(1))}>
+                <div
+                    style={styles.accountActionItem}
+                    onClick={() => dispatch(incrementCounter({ incrementAmount: 1 }))}
+                >
                     Sign In
                 </div>
                 <div style={styles.accountActionItem}>Create Account</div>

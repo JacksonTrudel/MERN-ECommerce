@@ -6,7 +6,8 @@ import rootReducer, { RootState } from './RootReducer';
 const persistConfig = {
     key: 'root',
     // Reducers we want to persist:
-    whitelist: ['counter'],
+    //whitelist: ['counter'],
+    //stateReconciler: autoMergeLevel2,
     storage,
 };
 

@@ -4,15 +4,17 @@ export const SET_LOGIN = 'SET_LOGIN';
 export const GET_COUNTER = 'GET_COUNTER';
 export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
 
-interface GetCounterAction {
+export interface GetCounterAction {
     type: 'GET_COUNTER';
 }
 
-interface IncrementCounterAction {
+export interface IncrementCounterPayload {
+    incrementAmount: number;
+}
+
+export interface IncrementCounterAction {
     type: 'INCREMENT_COUNTER';
-    payload: {
-        incrementAmount: number;
-    };
+    payload: IncrementCounterPayload;
 }
 
 export type CounterAction = GetCounterAction | IncrementCounterAction;
