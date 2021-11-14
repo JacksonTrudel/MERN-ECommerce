@@ -52,7 +52,7 @@ const styles = {
     pageNavSelectedItem: {
         display: 'flex',
         justifyContent: 'center',
-        padding: '1vmin',
+        padding: '1vmin 3vmin',
         borderLeft: `1px solid ${colors.lightAccent}`,
         backgroundColor: colors.darkAccent,
     },
