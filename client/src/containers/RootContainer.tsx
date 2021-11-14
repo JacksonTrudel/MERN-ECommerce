@@ -8,22 +8,22 @@ import GlobalFooter from '../components/GlobalFooter';
 
 function RootContainer() {
     return (
-        <div style={styles.pageContainer}>
-            <div style={styles.header}>
-                <GlobalNavBar />
-            </div>
-            <div style={styles.restOfPage}>
-                <Router>
+        <Router>
+            <div style={styles.pageContainer}>
+                <div style={styles.header}>
+                    <GlobalNavBar />
+                </div>
+                <div style={styles.restOfPage}>
                     <Routes>
                         <Route path="/upload-item" element={<UploadItem />} />
                         <Route path="/" element={<Homepage />} />
                     </Routes>
-                </Router>
+                </div>
+                <div style={styles.footer}>
+                    <GlobalFooter />
+                </div>
             </div>
-            <div style={styles.footer}>
-                <GlobalFooter />
-            </div>
-        </div>
+        </Router>
     );
 }
 

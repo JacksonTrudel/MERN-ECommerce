@@ -5,7 +5,6 @@ const styles = {
         display: 'flex',
         flexDirection: 'column' as 'column',
         width: '100%',
-        borderBottom: `3px solid ${colors.darkAccent}`,
         color: colors.mainText,
     },
     headerTopRow: {
@@ -19,6 +18,8 @@ const styles = {
         backgroundColor: colors.pageNavBackground,
         width: '100%',
         color: colors.mainBackground,
+        borderTop: `3px solid ${colors.lightAccent}`,
+        borderBottom: `3px solid ${colors.darkAccent}`,
     },
     footer: {
         display: 'flex',
