@@ -1,6 +1,7 @@
 import styles from '../styles/components/ImageUpload';
 import defaultProductImage from '../images/no-photo.svg';
 import { useState } from 'react';
+import Image from 'react-bootstrap/Image';
 
 function ImageUpload() {
     const [hoveringOverButton, setHoveringOverButton] = useState(false);
@@ -19,7 +20,7 @@ function ImageUpload() {
     return (
         <div style={styles.imageUploadContainer}>
             <div style={styles.imagePreviewContainer}>
-                <img src={selectedImage} alt="default_product_image" width="100%" />
+                <img src={selectedImage} style={styles.imagePreview} />
             </div>
             <div style={styles.imageUploadActionContainer}>
                 <input
