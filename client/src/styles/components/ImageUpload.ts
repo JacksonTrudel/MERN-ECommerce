@@ -1,16 +1,5 @@
 import colors from '../Colors';
 
-const mainButtonStyle = {
-    display: 'flex',
-    alignItems: 'center' as 'center',
-    justifyContent: 'center' as 'center',
-    height: '80%',
-    padding: 'auto',
-    width: '80%',
-    fontSize: '1.3em',
-    border: `1px solid ${colors.darkAccent}`,
-};
-
 const styles = {
     // enclosed in square shell
     imageUploadContainer: {
@@ -24,19 +13,13 @@ const styles = {
         height: '80%',
     },
     imageUploadActionContainer: {
-        height: '20%',
+        padding: '10px',
         width: '100%',
         display: 'flex',
+        flexDirection: 'row' as 'row',
+        alignItems: 'center' as 'center',
         justifyContent: 'center' as 'center',
-    },
-    imageUploadButton: {
-        ...mainButtonStyle,
         backgroundColor: colors.mainText,
-        color: colors.mainBackground,
-    },
-    imageUploadButtonHovering: {
-        ...mainButtonStyle,
-        backgroundColor: colors.darkAccent,
         color: colors.mainBackground,
     },
 };

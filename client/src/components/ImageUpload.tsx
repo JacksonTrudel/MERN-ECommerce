@@ -4,23 +4,31 @@ import { useState } from 'react';
 
 function ImageUpload() {
     const [hoveringOverButton, setHoveringOverButton] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(defaultProductImage);
 
     function toggleHovering() {
         setHoveringOverButton(!hoveringOverButton);
     }
+
+    function inputImageChange(event: React.ChangeEvent<HTMLInputElement>) {
+        if (event.target.files && event.target.files[0]) {
+            const img = event.target.files[0];
+            setSelectedImage(URL.createObjectURL(img));
+        }
+    }
     return (
         <div style={styles.imageUploadContainer}>
             <div style={styles.imagePreviewContainer}>
-                <img src={defaultProductImage} alt="default_product_image" width="100%" />
+                <img src={selectedImage} alt="default_product_image" width="100%" />
             </div>
             <div style={styles.imageUploadActionContainer}>
-                <div
-                    style={hoveringOverButton ? styles.imageUploadButtonHovering : styles.imageUploadButton}
+                <input
+                    type="file"
+                    name="selectedImage"
                     onMouseEnter={toggleHovering}
                     onMouseLeave={toggleHovering}
-                >
-                    Upload Image
-                </div>
+                    onChange={inputImageChange}
+                />
             </div>
         </div>
     );
