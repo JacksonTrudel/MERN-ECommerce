@@ -10,11 +10,11 @@
 import styles from '../styles/GlobalNavBar';
 import { incrementCounter } from '../redux/actions/CounterActions';
 import { useAppDispatch } from '../redux/hooks';
-import colors from '../styles/Colors';
 import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
+import NavBarItem from './NavBarItem';
 
-enum NavBarSelection {
+export enum NavBarSelection {
     HOMEPAGE,
     UPLOAD_ITEM,
     // (Step 1:) Add to NavBarSelection enum
@@ -59,26 +59,17 @@ function GlobalNavBar() {
                 </div>
             </div>
             <div style={styles.headerPageNav}>
-                <div style={{ ...styles.pageNavContainer, margin: '0 auto 0 7%' }}>
-                    <div
-                        style={
-                            currentPage === NavBarSelection.HOMEPAGE ? styles.pageNavSelectedItem : styles.pageNavItem
-                        }
+                <div style={styles.pageNavContainer}>
+                    <NavBarItem
+                        label="Homepage"
+                        isSelected={currentPage === NavBarSelection.HOMEPAGE}
                         onClick={() => setNavBarActiveSelection(NavBarSelection.HOMEPAGE)}
-                    >
-                        Homepage
-                    </div>
-                    <div
-                        style={{
-                            ...(currentPage === NavBarSelection.UPLOAD_ITEM
-                                ? styles.pageNavSelectedItem
-                                : styles.pageNavItem),
-                            borderRight: `1px solid ${colors.lightAccent}`,
-                        }}
+                    />
+                    <NavBarItem
+                        label="Upload Item"
+                        isSelected={currentPage === NavBarSelection.UPLOAD_ITEM}
                         onClick={() => setNavBarActiveSelection(NavBarSelection.UPLOAD_ITEM)}
-                    >
-                        Upload Item
-                    </div>
+                    />
                     {/*     (Step 3:) Add JSX for entry   */}
                 </div>
             </div>

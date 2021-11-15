@@ -15,6 +15,7 @@ const styles = {
         width: '100%',
     },
     headerPageNav: {
+        display: 'flex',
         backgroundColor: colors.pageNavBackground,
         width: '100%',
         color: colors.mainBackground,
@@ -40,8 +41,11 @@ const styles = {
         padding: '1vmin',
     },
     pageNavContainer: {
-        display: 'flex',
+        display: 'inline-flex',
         flexDirection: 'row' as 'row',
+        paddingLeft: '7%',
+        margin: '0px',
+        borderRight: `1px solid ${colors.lightAccent}`,
     },
     pageNavItem: {
         display: 'flex',
