@@ -3,9 +3,9 @@ import colors from '../../Colors';
 const styles = {
     uploadContiner: {
         diplay: 'flex',
-        flexDirection: 'column' as 'column',
+        flexDirection: 'row' as 'row',
+        margin: '5% auto 5% 5%',
         width: '90%',
-        margin: '5% auto',
     },
     pageHeader: {
         textAlign: 'start' as 'start',
@@ -19,11 +19,17 @@ const styles = {
     },
     imageUploadContainer: {
         display: 'flex',
-        flex: '1 1 auto',
+        flex: '0 0 auto',
     },
-    infoContainer: {
+    form: {
         display: 'flex',
+        flexDirection: 'column' as 'column',
+        justifyContent: 'center' as 'center',
         flex: '1 1 auto',
+        width: '100%',
+    },
+    formItem: {
+        margin: '3%',
     },
 };
 
