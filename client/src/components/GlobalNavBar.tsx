@@ -2,19 +2,19 @@
     To add a new entry to the nav bar, complete the following steps:
         (Step 1:) Add to NavBarSelection enum
         (Step 2:) Add mapping to URL path
-        (Step 3:) Add JSX for entry
+        (Step 3:) Add NavBarItem for entry
 
     The appropriate locations for each step are commented.
 */
 
-import styles from '../styles/GlobalNavBar';
+import styles from '../styles/components/GlobalNavBar';
 import { incrementCounter } from '../redux/actions/CounterActions';
 import { useAppDispatch } from '../redux/hooks';
 import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import NavBarItem from './NavBarItem';
 
-export enum NavBarSelection {
+enum NavBarSelection {
     HOMEPAGE,
     UPLOAD_ITEM,
     // (Step 1:) Add to NavBarSelection enum
@@ -70,7 +70,7 @@ function GlobalNavBar() {
                         isSelected={currentPage === NavBarSelection.UPLOAD_ITEM}
                         onClick={() => setNavBarActiveSelection(NavBarSelection.UPLOAD_ITEM)}
                     />
-                    {/*     (Step 3:) Add JSX for entry   */}
+                    {/*     (Step 3:) Add NavBarItem for entry   */}
                 </div>
             </div>
             {

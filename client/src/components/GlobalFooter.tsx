@@ -1,4 +1,4 @@
-import styles from '../styles/GlobalNavBar';
+import styles from '../styles/components/GlobalNavBar';
 
 function GlobalFooter() {
     return (

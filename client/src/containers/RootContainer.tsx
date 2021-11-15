@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import '../App.css';
 import GlobalNavBar from '../components/GlobalNavBar';
 import UploadItem from './retailer/UploadItem';
-import styles from '../styles/RootContainer';
+import styles from '../styles/containers/RootContainer';
 import GlobalFooter from '../components/GlobalFooter';
 
 function RootContainer() {
