@@ -5,12 +5,13 @@ const styles = {
         diplay: 'flex',
         flexDirection: 'column' as 'column',
         width: '90%',
-        margin: '0 auto',
+        margin: '5% auto',
     },
     pageHeader: {
         textAlign: 'start' as 'start',
         color: colors.mainText,
         fontSize: '3em',
+        margin: '2% 0px',
     },
     formContainer: {
         display: 'flex',

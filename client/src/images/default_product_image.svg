@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="223px" height="223px" viewBox="0 0 223 223" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Slice</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="inspire-product--hover" transform="translate(1.000000, 34.000000)" fill="#000000" fill-rule="nonzero">
+            <circle id="Oval" cx="56.5" cy="58.4" r="5.5"></circle>
+            <path d="M219,26.9 L219,154.9 L3,154.9 L3,26.9 L219,26.9 M222,23.9 L0,23.9 L0,157.9 L222,157.9 L222,23.9 L222,23.9 Z" id="Shape"></path>
+            <path d="M133.6,48.5 C157,48.5 176,67.5 176,90.9 C176,114.3 157,133.3 133.6,133.3 C110.2,133.3 91.2,114.3 91.2,90.9 C91.2,67.6 110.2,48.5 133.6,48.5 M133.6,45.5 C108.5,45.5 88.2,65.8 88.2,90.9 C88.2,116 108.5,136.3 133.6,136.3 C158.7,136.3 179,116 179,90.9 C179,65.8 158.6,45.5 133.6,45.5 L133.6,45.5 Z" id="Shape"></path>
+            <circle id="Oval" cx="133.3" cy="91.3" r="22.6"></circle>
+            <polygon id="Path" points="3 26.4 0 26.4 0 0.9 69 0.9 69 25.4 66 25.4 66 3.9 3 3.9"></polygon>
+        </g>
+    </g>
+</svg>

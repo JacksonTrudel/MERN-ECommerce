@@ -1,3 +1,4 @@
+import ImageUpload from '../../components/ImageUpload';
 import styles from '../../styles/containers/retailer/UploadItem';
 import PageWithMargins from '../PageWithMargins';
 
@@ -7,7 +8,9 @@ function UploadItem() {
             <div style={styles.uploadContiner}>
                 <div style={styles.pageHeader}>Expand Your Shop</div>
                 <div style={styles.formContainer}>
-                    <div style={styles.imageUploadContainer}></div>
+                    <div style={styles.imageUploadContainer}>
+                        <ImageUpload />
+                    </div>
                     <div style={styles.infoContainer}></div>
                 </div>
             </div>
